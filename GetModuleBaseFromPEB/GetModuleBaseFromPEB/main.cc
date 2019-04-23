@@ -5,7 +5,7 @@
 //#define GETPROCESSBASE
 
 ULONG64 GetModuleBasex64(PEPROCESS proc, UNICODE_STRING module_name) {
-	PPEB pPeb = (PPEB)PsGetProcessWow64Process(proc); // get Process PEB, function is unexported and undoc
+	PPEB pPeb = (PPEB)PsGetProcessPeb(proc); // get Process PEB, function is unexported and undoc
 
 	if (!pPeb) {
 		return 0; // failed
